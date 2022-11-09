@@ -1,0 +1,111 @@
+@use "./variables";
+.fr-second-toolbar svg {
+  margin-top: -2px;
+  max-height: 20px;
+  max-width: 55px;
+}
+.fr-second-toolbar .fr-counter {
+  display: none;
+}
+.fr-popup {
+  z-index: 99999999999 !important;
+}
+.fr-toolbar {
+  .fr-btn-grp {
+    margin: 0 2px !important;
+  }
+  .fr-command.fr-btn {
+    font-size: 10px;
+    width: 25px;
+    margin: 0;
+    &[data-cmd^="froala-btn-"] {
+      color: variables.$site-white;
+      margin: 0 2px;
+      width: auto;
+      .froala-primary,
+      .froala-success,
+      .froala-danger {
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        gap: 0.2rem;
+        font-size: 12px;
+        padding: 6px !important;
+        i,
+        svg {
+          display: inline;
+          margin: 0 !important;
+          width: auto !important;
+        }
+        svg path {
+          fill: variables.$site-white;
+        }
+      }
+      .froala-primary {
+        background-color: variables.$color-primary;
+        border-color: variables.$color-primary;
+      }
+      .froala-success {
+        background-color: variables.$color-success;
+        border-color: variables.$color-success;
+      }
+      .froala-danger {
+        background-color: variables.$color-danger;
+        border-color: variables.$color-danger;
+      }
+    }
+    &:not([data-cmd^="froala-btn-"]) {
+      font-size: 0.75rem;
+      padding: 2px 0;
+      margin: 0 0.2rem 0 0;
+    }
+  }
+}
+/* Froala Image Styles */
+.fr-image-blur {
+  opacity: 0.5;
+}
+.fr-image-border-black {
+  border: 1px solid variables.$site-black;
+}
+.fr-image-border-gray {
+  border: 1px solid variables.$site-gray;
+}
+.fr-image-grayscale {
+  filter: grayscale(1);
+}
+.fr-image-round {
+  border-radius: 50%;
+}
+.fr-image-solid {
+  border-radius: 5px;
+  border: 2px solid variables.$site-light;
+}
+
+.boldborder {
+  border-width: 2px !important;
+}
+.extraboldborder {
+  border-width: 3px !important;
+}
+.red {
+  border: 1px solid variables.$site-red !important;
+}
+.blue {
+  border: 1px solid variables.$site-blue !important;
+}
+.black {
+  border: 1px solid variables.$site-black !important;
+}
+.boldblack {
+  border: 2px solid variables.$site-black !important;
+}
+
+.extraboldblack {
+  border: 3px solid variables.$site-black !important;
+}
+
+.centerbold {
+  font-weight: bold;
+  text-align: center;
+}

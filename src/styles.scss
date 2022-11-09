@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+@import "./assets/scss/header-menu";
+html {
+  height: 100%;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+  padding: 0;
+}
+button + button {
+  margin-left: 0.25rem;
+}
+
+.site-logo {
+  height: 40px;
+}
+
+.page-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 20rem);
+}
+.auth-card {
+  width: 599px;
+  .card-body {
+    .row {
+      margin-bottom: 1rem;
+    }
+  }
+}

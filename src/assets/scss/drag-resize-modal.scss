@@ -1,0 +1,29 @@
+drag-resize-modal {
+  .modal-wrapper {
+    background-color: white;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    .modal-header {
+      cursor: move;
+      flex: 0 0 70px;
+    }
+    .modal-footer {
+      flex: 0 0 50px;
+    }
+    .modal-body {
+      flex: 1 1 auto;
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
+    }
+  }
+  .top-buttons {
+    display: flex;
+    button + button {
+      margin-left: 10px;
+    }
+    button.btn.btn-link {
+      color: #000;
+    }
+  }
+}

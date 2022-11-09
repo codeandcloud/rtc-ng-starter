@@ -1,0 +1,42 @@
+@use "./variables";
+@use "./mixins";
+#header-nav {
+  .navbar {
+    color: variables.$site-white;
+    background-color: variables.$site-blue;
+    .nav-item:hover {
+      background-color: variables.$site-white;
+      border-radius: 5px;
+      a {
+        color: variables.$site-blue;
+      }
+    }
+    .nav-link,
+    .dropdown-item {
+      cursor: pointer;
+      color: variables.$site-white;
+      &.active {
+        font-weight: bold;
+      }
+    }
+    .nav-item.show.dropdown {
+      a {
+        color: variables.$site-blue;
+        background-color: variables.$site-white;
+        &:hover {
+          color: variables.$site-white;
+          background-color: variables.$site-blue;
+        }
+      }
+    }
+    .btn-header {
+      border: 1px solid variables.$site-white;
+      border-radius: 5px;
+      color: variables.$site-white;
+      transition: all 0.2s linear;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

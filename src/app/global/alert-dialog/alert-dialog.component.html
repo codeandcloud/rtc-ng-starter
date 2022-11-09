@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ title }}</h4>
+  <button type="button"
+          class="btn btn close"
+          aria-label="Close"
+          id="alert-dialog-dismiss"
+          (click)="dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="max-content"
+       style="overflow: auto  !important;max-height: calc(70vh) !important;"
+       [innerHTML]="message">
+  </div>
+</div>
+<div class="modal-footer">
+  <button [hidden]="!isButtonShown"
+          type="button"
+          class="btn btn-primary"
+          (click)="accept()">{{ btnOkText }}</button>
+</div>

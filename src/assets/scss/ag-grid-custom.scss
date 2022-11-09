@@ -1,0 +1,99 @@
+@use "./variables";
+// https://www.ag-grid.com/angular-data-grid/themes-customising/#full-list-of-theme-parameters
+@import "ag-grid-community/src/styles/ag-grid";
+@import "ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin";
+
+.ag-theme-alpine {
+  @include ag-theme-alpine(
+    (
+      // use theme parameters where possible
+      alpine-active-color: #b2e0f1,
+      borders: true,
+      header-background-color: variables.$color-primary,
+      header-foreground-color: variables.$site-white,
+      header-height: 30px,
+      row-height: 22px
+    )
+  );
+
+  .ag-ltr .ag-cell,
+  .ag-rtl .ag-cell {
+    border-right: 1px solid variables.$site-gray-300;
+  }
+
+  .ag-header-cell,
+  .ag-header-group-cell {
+    border-right: 1px solid variables.$site-white;
+  }
+
+  .ag-link-button {
+    cursor: pointer;
+  }
+}
+.ag-link-button {
+  cursor: pointer;
+}
+.ag-icon-button,
+.ag-fa-icon-button {
+  background-color: variables.$site-white;
+  border: 1px solid variables.$color-primary;
+  border-radius: 4px;
+  color: variables.$color-primary;
+  font-size: 0.5rem;
+  line-height: initial;
+  padding: 1px 2px;
+  + .ag-icon-button {
+    margin-left: 0.2rem;
+  }
+  &.outline-primary {
+    color: variables.$color-primary;
+    border: 1px solid variables.$color-primary;
+    &:hover {
+      background-color: variables.$color-primary;
+      color: variables.$site-white;
+    }
+  }
+  &.outline-secondary {
+    color: variables.$color-secondary;
+    border: 1px solid variables.$color-secondary;
+    &:hover {
+      background-color: variables.$color-secondary;
+      color: variables.$site-white;
+    }
+  }
+  &.outline-success {
+    color: variables.$color-success;
+    border: 1px solid variables.$color-success;
+    &:hover {
+      background-color: variables.$color-success;
+      color: variables.$site-white;
+    }
+  }
+  &.outline-info {
+    color: variables.$color-info;
+    border: 1px solid variables.$color-info;
+    &:hover {
+      background-color: variables.$color-info;
+      color: variables.$site-white;
+    }
+  }
+  &.outline-warning {
+    color: variables.$site-orange;
+    border: 1px solid variables.$site-orange;
+    &:hover {
+      background-color: variables.$site-orange;
+      color: variables.$site-white;
+    }
+  }
+  &.outline-danger {
+    color: variables.$color-danger;
+    border: 1px solid variables.$color-danger;
+    &:hover {
+      background-color: variables.$color-danger;
+      color: variables.$site-white;
+    }
+  }
+}
+.ag-fa-icon-button {
+  font-size: 0.75rem;
+}

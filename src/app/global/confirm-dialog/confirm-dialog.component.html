@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ title }}</h4>
+  <button type="button"
+          class="btn btn-danger btn-sm"
+          aria-label="Close"
+          (click)="dismiss()">
+    <i class="fa-regular fa-xmark-large"></i>
+  </button>
+</div>
+<div class="modal-body"
+     [innerHTML]="message"></div>
+<div class="modal-footer">
+  <button type="button"
+          [class]="btnOkClass || 'btn btn-primary'"
+          (click)="accept()">{{ btnOkText }}</button>
+  <button type="button"
+          [class]="btnCancelClass || 'btn btn-danger'"
+          (click)="decline()">{{ btnCancelText }}</button>
+</div>

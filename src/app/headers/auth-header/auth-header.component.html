@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid">
+    <a class="navbar-brand"
+       (click)="goToRoute('/home')">
+      <img src="../../../assets/images/logo-nav@2x.png"
+           alt="Angular Logo"
+           class="site-logo">
+    </a>
+    <button class="navbar-toggler"
+            type="button"
+            (click)="toggleCollapseMenu()">
+      <i class="fa-solid fa-bars text-white"></i>
+    </button>
+    <div [ngbCollapse]="isMenuCollapsed"
+         class="collapse navbar-collapse"
+         id="navbarNavDropdown">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link"
+             (click)="goToRoute('/home')"
+             routerLinkActive="active">Home</a>
+        </li>
+        <li ngbDropdown
+            class="nav-item">
+          <a ngbDropdownToggle
+             class="nav-link"
+             id="navbarDemosLink"
+             role="button">
+            Demos
+          </a>
+          <ul ngbDropdownMenu
+              aria-labelledby="navbarDemosLink">
+            <li>
+              <a ngbDropdownItem
+                 (click)="goToRoute('demos/utilities')">Utilities</a>
+            </li>
+            <li>
+              <a ngbDropdownItem
+                 (click)="goToRoute('demos/ag-grid')">Ag-Grid</a>
+            </li>
+            <li>
+              <a ngbDropdownItem
+                 (click)="goToRoute('demos/ng-bootstrap')">Ng Bootstrap</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li ngbDropdown
+            class="nav-item">
+          <a ngbDropdownToggle
+             class="nav-link"
+             id="navbarAccountMenuLink"
+             role="button">
+            Account
+          </a>
+          <ul ngbDropdownMenu
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarAccountMenuLink">
+            <li>
+              <a ngbDropdownItem
+                 (click)="goToRoute('user/profile')">Profile</a>
+            </li>
+            <li>
+              <a ngbDropdownItem
+                 (click)="goToRoute('user/settings')">Settings</a>
+            </li>
+            <li>
+              <a ngbDropdownItem
+                 (click)="logout()">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

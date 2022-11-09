@@ -1,0 +1,44 @@
+<div class="page-center">
+  <div class="card auth-card">
+    <div class="card-header">
+      Login
+    </div>
+    <div class="card-body">
+      <form [formGroup]="loginForm"
+            (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-4">
+            <label for="inputUserName"
+                   class="col-form-label">User Name</label>
+          </div>
+          <div class="col-8">
+            <input type="text"
+                   id="inputUserName"
+                   class="form-control"
+                   autocomplete="username"
+                   formControlName="username">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <label for="inputPassword"
+                   class="col-form-label">Password</label>
+          </div>
+          <div class="col-8">
+            <input type="password"
+                   id="inputPassword"
+                   class="form-control"
+                   autocomplete="current-password"
+                   formControlName="password">
+          </div>
+        </div>
+        <div class="text-end">
+          <button type="submit"
+                  class="btn btn-primary"
+                  [disabled]="!loginForm.valid">Login</button>
+          <button class="btn btn-light">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
