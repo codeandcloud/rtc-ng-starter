@@ -1,0 +1,11 @@
+<header>
+  <ng-container [ngSwitch]="headerType">
+    <rtc-admin-header *ngSwitchCase="'admin'"></rtc-admin-header>
+    <rtc-user-header *ngSwitchCase="'user'"></rtc-user-header>
+    <rtc-public-header *ngSwitchDefault></rtc-public-header>
+  </ng-container>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer></footer>

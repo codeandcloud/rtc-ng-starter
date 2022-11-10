@@ -5,6 +5,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { LoginRequest } from 'src/app/models/login-request.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { NotifierService } from 'src/app/services/notifier.service';
+import { RoleService } from 'src/app/services/role.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private router: Router,
     private authService: AuthService,
+    private roleService: RoleService,
     private userService: UserService,
     private notifier: NotifierService
   ) {}
@@ -45,7 +47,8 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.userService.saveUser(user);
           this.userService.saveToken(user.token);
           this.authService.toggleAuthStatus(true);
-          this.router.navigateByUrl('/home');
+          const toUrl = this.roleService.isAdmin() ? '/admin/home' : '/home';
+          this.router.navigateByUrl(toUrl);
         },
         error: (err) =>
           this.notifier.showErrorNotification('Error Occured: ', err),

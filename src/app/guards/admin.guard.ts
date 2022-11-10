@@ -7,12 +7,17 @@ import {
 } from '@angular/router';
 import { first, map, Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
+import { RoleService } from '../services/role.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
-  constructor(private router: Router, private authService: AuthService) {}
+export class AdminGuard implements CanActivate {
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private roleService: RoleService
+  ) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -20,7 +25,7 @@ export class AuthGuard implements CanActivate {
     return this.authService.authStatus().pipe(
       map((auth) => {
         if (auth) {
-          return true;
+          return this.roleService.isAdmin();
         }
         this.router.navigateByUrl('/auth/login');
         return false;

@@ -15,14 +15,14 @@ export class AuthService {
     private http: HttpClient
   ) {}
 
-  isLoggedIn(): Observable<boolean> {
+  authStatus(): Observable<boolean> {
     return this.isLoginSubject.asObservable();
   }
 
   login(request: LoginRequest): Observable<User> {
     let user: User = new SiteUser('John', 'Doe', ['user'], 'random-token-user');
     if (request.username.toLocaleLowerCase().includes('admin')) {
-      let user: User = new SiteUser(
+      user = new SiteUser(
         'Site',
         'Administrator',
         ['admin', 'user'],

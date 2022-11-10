@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AuthHeaderComponent } from './auth-header.component';
+import { PublicLayoutComponent } from './public-layout.component';
 
-describe('AuthHeaderComponent', () => {
-  let component: AuthHeaderComponent;
-  let fixture: ComponentFixture<AuthHeaderComponent>;
+describe('PublicLayoutComponent', () => {
+  let component: PublicLayoutComponent;
+  let fixture: ComponentFixture<PublicLayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AuthHeaderComponent ]
+      declarations: [ PublicLayoutComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AuthHeaderComponent);
+    fixture = TestBed.createComponent(PublicLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

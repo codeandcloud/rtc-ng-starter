@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid">
+    <a class="navbar-brand"
+       (click)="goToRoute('/home')">
+      <img src="../../../assets/images/logo-nav@2x.png"
+           alt="Angular Logo"
+           class="site-logo">
+    </a>
+    <button class="navbar-toggler"
+            type="button"
+            (click)="toggleCollapseMenu()">
+      <i class="fa-solid fa-bars text-white"></i>
+    </button>
+    <div [ngbCollapse]="isMenuCollapsed"
+         class="collapse navbar-collapse"
+         id="navbarNavDropdown">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link"
+             (click)="goToRoute('/admin/home')"
+             routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             (click)="goToRoute('/admin/dashboard')"
+             routerLinkActive="active">Dashboard</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <button class="btn btn-sm btn-header"
+                type="button"
+                (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</nav>

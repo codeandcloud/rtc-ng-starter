@@ -5,11 +5,11 @@ import { HeaderMenuService } from 'src/app/services/header-menu.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'rtc-auth-header',
-  templateUrl: './auth-header.component.html',
-  styleUrls: ['./auth-header.component.scss'],
+  selector: 'rtc-user-header',
+  templateUrl: './user-header.component.html',
+  styleUrls: ['./user-header.component.scss'],
 })
-export class AuthHeaderComponent implements OnInit {
+export class UserHeaderComponent implements OnInit {
   isMenuCollapsed = true;
   constructor(
     private router: Router,

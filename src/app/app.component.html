@@ -1,12 +1,1 @@
-<header id="header-nav">
-  <ng-container *ngIf="(isLoggedIn | async); else public_header_block">
-    <rtc-auth-header></rtc-auth-header>
-  </ng-container>
-  <ng-template #public_header_block>
-    <rtc-public-header></rtc-public-header>
-  </ng-template>
-</header>
-<main>
-  <router-outlet></router-outlet>
-</main>
-<footer></footer>
+<router-outlet></router-outlet>

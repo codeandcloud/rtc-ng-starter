@@ -1,7 +1,7 @@
 @use "./variables";
 @use "./mixins";
-#header-nav {
-  .navbar {
+header {
+  nav.navbar {
     color: variables.$site-white;
     background-color: variables.$site-blue;
     .nav-item:hover {
